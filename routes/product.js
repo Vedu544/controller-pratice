@@ -1,21 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/productControllers');
 
-router.get('/', (req, res) => {
-    console.log("GET /Fetching all products");
-    res.send("Here is the list of products!");
-});
 
-router.post('/', (req, res) => {
-    console.log("POST /adding a new product");
-    console.log(req.body);
-    res.send("product has been added!");
-});
+router.get('/getProducts', controller.getProduct)
 
-router.get('/:id', (req, res) => {
-    console.log("GET /Fetching product by id");
-    res.send("Here is the list of product by id!");
-});
+router.post('/newProduct', controller.newProduct)
 
+router.get('/:id', controller.getProductById)
 
 module.exports = router;

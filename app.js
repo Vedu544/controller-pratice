@@ -1,7 +1,5 @@
 const express = require('express');
-const userRoutes = require('./routes/user.js');
 const productRoutes = require('./routes/product.js')
-const cartRoutes = require('./routes/cart.js')
 
 const app = express();
 const PORT = 3000;
